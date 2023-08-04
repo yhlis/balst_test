@@ -182,10 +182,10 @@ export default {
         })
 
         //页面初始化时生成projectId
-        // calculateApi.createProject().then(response => {
-        //     console.log(response.data.data.projectId)
-        //     cookie.set('projectId',response.data.data.projectId)
-        // })
+         calculateApi.createProject().then(response => {
+             console.log(response.data.data.projectId)
+             cookie.set('projectId',response.data.data.projectId)
+         })
     },
     methods:{
         check(){
