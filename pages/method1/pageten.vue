@@ -5,16 +5,24 @@
     
     <div style="margin-top:50px">
             <h3 class="font-type4" style="display:inline-block">装药直径：
+<<<<<<< HEAD
                 <el-input style="width:100px" v-model="surDc"><template slot="suffix">mm</template></el-input>
             </h3>
             <h3 class="font-type4" style="display:inline-block">外插角：
                 <el-input style="width:100px" v-model="heterodyneAngle"></el-input>
+=======
+                <el-input style="width:100px" v-model="diameter"><template slot="suffix">mm</template></el-input>
+            </h3>
+            <h3 class="font-type4" style="display:inline-block">外插角：
+                <el-input style="width:100px" v-model="angle"></el-input>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             </h3>
     </div>
 
     <el-button style="margin:20px 0 0 200px" @click="calculate()" type="primary">试算孔距与光爆层厚度</el-button>
     <div style="margin-top:50px">
             <h3 class="font-type4" style="display:inline-block">预估孔距：
+<<<<<<< HEAD
                 <el-input style="width:100px" v-model="surHoleSpacing"><template slot="suffix">m</template></el-input>
             </h3>
             <h3 class="font-type4" style="display:inline-block">光爆层厚度：
@@ -26,6 +34,18 @@
 <div style="background-color:blue;height:auto;">
   <!-- 表格2开始 -->
         <div style="float:left">
+=======
+                <el-input style="width:100px" v-model="distance"><template slot="suffix">m</template></el-input>
+            </h3>
+            <h3 class="font-type4" style="display:inline-block">光爆层厚度：
+                <el-input style="width:100px" v-model="thickness"><template slot="suffix">m</template></el-input>
+            </h3>
+    </div>
+    <el-button style="margin:20px 0 0 200px" @click="draw()" type="primary">布孔并绘图</el-button>
+  
+  <!-- 表格2开始 -->
+        <div>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             <el-table
                 :data="holeTable"
                 border
@@ -117,8 +137,13 @@
                         label=""
                         width="80">
                         <div class="item" slot-scope="scope">
+<<<<<<< HEAD
                         <el-input class="item__input" v-model="scope.row.offsetDistance"></el-input>
                         <div class="item__txt">{{scope.row.offsetDistance}}</div>
+=======
+                        <el-input class="item__input" v-model="scope.row.distance"></el-input>
+                        <div class="item__txt">{{scope.row.distance}}</div>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
                         </div>
                     </el-table-column>
                 </el-table-column>
@@ -137,18 +162,27 @@
             </div>
         </div>
 <!-- 表格2结束 -->
+<<<<<<< HEAD
     <!-- 画布展示开始 -->
         <div style="background-color:pink;width:650px;height:500px;float:left;margin:-200px 0 0 10px;">
             <show :vertices="vertices" :vertices2="vertices2" :tube="tube"/>
         </div>   
     <!-- 画布展示结束 -->
 </div>
+=======
+
+    <!-- 画布展示开始 -->
+    <div style="background-color:pink;width:650px;height:500px;margin:-400px 0 0 620px;">
+    </div>   
+    <!-- 画布展示结束 -->   
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 
 </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import '~/assets/css2/pages.css'
 import surroundingHolesApi from '@/api/surroundingHoles.js'
 import cuttingApi from '@/api/cutting.js'
@@ -225,6 +259,20 @@ export default {
                 })
             })
         },
+=======
+export default {
+    data(){
+        return{
+            diameter:'',
+            angle:'',
+            distance:'',
+            thickness:'',
+            holeTable:[],
+            editProp: ['holeNum','X1','Y1','X2','Y2','Z2','azimuth','distance'],
+        }
+    },
+    methods:{
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
         addHole(){
             this.holeTable.push({
                 holeNum:'',x1:'',y1:'',x2:'',y2:'',z2:'',azimuth:'',distance:''
@@ -252,4 +300,40 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
+=======
+.title-front{
+    margin-top: 50px;
+    font-size: 40px !important;
+}
+.card5{
+  height: auto;
+  width: 100%;
+}
+.font-type4{ 
+  margin-left: 30px;
+  font-size: 20px !important;
+  width: 259px;
+}
+
+/* 表格ui */
+.item .item__input {
+  display: none;
+  width: 90px;
+}
+/* 调整elementUI中样式 如果不需要调整请忽略 */
+.item .item__input .el-input__inner {
+  height: 24px !important;
+}
+/* 调整elementUI中样式 如果不需要调整请忽略 */
+.item .item__input .el-input__suffix i {
+  font-size: 12px !important;
+  line-height: 26px !important;
+}
+.item .item__txt {
+  box-sizing: border-box;
+  line-height: 24px;
+  padding: 0 9px;
+}
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 </style>

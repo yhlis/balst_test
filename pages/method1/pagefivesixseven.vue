@@ -90,6 +90,7 @@ export default {
     // }
     this.indexNum = this.$route.query.ucs/10;
   },
+<<<<<<< HEAD
   watch:{
     strength1:{
       handler(newVal,oldVal){
@@ -98,12 +99,15 @@ export default {
         immediate: false 
     }
   },
+=======
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
   methods:{
     //保存 /更新工程信息
     saveMessage(){
       if(this.indexNum!=null){
         this.saveProjectMessage.explosivityIndex = this.indexNum;
         this.saveProjectMessage.rockId= this.$route.query.rockId;
+<<<<<<< HEAD
         this.saveProjectMessage.ucs= this.$route.query.ucs*1000000;
         this.saveProjectMessage.structureScore= this.$route.query.structureScore;
         this.saveProjectMessage.structuralPlaneScore= this.$route.query.structuralPlaneScore;
@@ -120,6 +124,21 @@ export default {
         calculateApi.saveProject(this.saveProjectMessage).then(response => {
           if(response.data.code==1){
             cookie.set("projectId",response.data.data.id)
+=======
+        this.saveProjectMessage.ucs= this.$route.query.ucs;
+        this.saveProjectMessage.structureScore= this.$route.query.structureScore;
+        this.saveProjectMessage.structuralPlaneScore= this.$route.query.structuralPlaneScore;
+        this.saveProjectMessage.buriedDeep=this.strength1;
+        this.saveProjectMessage.initialGroundStress=this.strength2;
+        this.saveProjectMessage.holeDiameter=this.diameter;
+        this.saveProjectMessage.holeLength=this.advance;
+        this.saveProjectMessage.explosiveDensity=this.density;
+        this.saveProjectMessage.d=this.burstSpeed;
+        this.saveProjectMessage.excavationCode='001001';
+        this.saveProjectMessage.id = cookie.get("projectId")
+        calculateApi.saveProject(this.saveProjectMessage).then(response => {
+          if(response.data.data.code==1){
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             alert("工程信息保存成功!");
           }else{
             alert("工程信息保存失败，请重新尝试!");

@@ -202,8 +202,6 @@ export default {
 }
 </script>
 <style>
-
-
 /*滚动条样式*/
 
 .myTable .el-table__body-wrapper::-webkit-scrollbar {

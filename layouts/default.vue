@@ -65,7 +65,11 @@
     </el-aside>
     <!-- /公共侧边栏 -->
 
+<<<<<<< HEAD
     <el-main style="height:100%;">
+=======
+    <el-main style="height:100%;overflow-y: hidden">
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
       <nuxt/>
     </el-main>
   </el-container>
@@ -76,8 +80,19 @@
 <script>
 import '~/assets/css/reset.css'
 import '~/assets/css/theme.css'
+<<<<<<< HEAD
 import '~/assets/css/base.css'
 import '~/assets/css2/default.css'
+=======
+import '~/assets/css/global.css'
+import '~/assets/css/web.css'
+import '~/assets/css/base.css'
+import '~/assets/css/activity_tab.css'
+import '~/assets/css/bottom_rec.css'
+import '~/assets/css/nice_select.css'
+import '~/assets/css/order.css'
+import "~/assets/css/pages-weixinpay.css"
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
   import cookie from 'js-cookie'
 
 export default {
@@ -105,7 +120,11 @@ export default {
             {"name" : "掏槽孔布置","url" : "/method1/pagenine"},
             {"name" : "周边孔布置","url" : "/method1/pageten"},
             {"name" : "辅助孔布置","url" : "/method1/pageeleven"},
+<<<<<<< HEAD
             {"name" : "装药量计算","url" : "/method1/pagetwelve"},
+=======
+            {"name" : "装药量计算","url" : "/"},
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             {"name" : "起爆网络设计","url" : "/"},
             {"name" : "爆破效果预测","url" : "/"},
             {"name" : "爆破成本计算","url" : "/"},
@@ -144,5 +163,44 @@ export default {
 };
 </script>
 <style>
+<<<<<<< HEAD
+=======
+.operation-wrapper {
+  width: 100% !important;
+}
+.el-main{
+  padding: 0px 16px !important;
+  height: calc(100vh - 61px);
+  /* overflow-y: hidden; */
+  height: 1400px;
+}
+.el-aside .el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+.el-aside {
+    height: calc(100vh - 61px);
+     overflow: hidden;
+  }
+.el-header {
+  height:61px; 
+}
+
+ .top-box{
+    height: 60px;
+    display: flex;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .top-box-i{
+  	width: 32px;
+    height: 32px;
+    font-size: 24px;
+    margin: 16px 10px 0 15px;
+    color: #000000;
+  }
+  .el-menu--horizontal .el-menu--popup .el-submenu__title{
+    color: #FFFFFF!important;
+  }
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 
 </style>

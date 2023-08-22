@@ -11,6 +11,7 @@ export default{
             method: 'post'
         })
     },
+<<<<<<< HEAD
     //计算底边中点纵坐标
     getBottomY(data){
         return request({
@@ -19,4 +20,6 @@ export default{
             method: 'post'
         })
     },
+=======
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 }

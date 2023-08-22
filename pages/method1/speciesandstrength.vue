@@ -78,11 +78,23 @@
         <h2 class="title-front">2 岩石强度</h2>
         <br>
         <el-table
+<<<<<<< HEAD
+=======
+            ref="multipleTable"
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             :data="tableData"
             :header-cell-style="{fontSize: '23px'}"
             tooltip-effect="dark"
             style="width: 100%;font-size:15px"
+<<<<<<< HEAD
             @current-change="handleSelectionChange">
+=======
+            @selection-change="handleSelectionChange">
+            <el-table-column
+            type="selection"
+            width="55">
+            </el-table-column>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             <el-table-column
             label="实地估算"
             width="400">
@@ -132,6 +144,7 @@ export default {
             tableData: [{
             estimate: '标本只能用地质锤凿碎',
             example: '新鲜玄武岩、燧石、辉绿岩、片麻岩、花岗岩、石英岩',
+<<<<<<< HEAD
             range: '>250',strength:250
             }, {
             estimate: '标本需要地质锤多次击打才能断裂',
@@ -154,6 +167,35 @@ export default {
             example: '高度风化或变质的岩石',
             range: '1-5',strength:3
             }],
+=======
+            range: '>250'
+            }, {
+            estimate: '标本需要地质锤多次击打才能断裂',
+            example: '角闪岩、砂岩、玄武岩、辉长岩、片麻岩、花岗闪长岩、石灰岩',
+            range: '100-250'
+            }, {
+            estimate: '标本需要地质锤不止一次的击打才能断裂',
+            example: '石灰石、大理石、千枚岩、砂岩、片岩、页岩、粉砂岩',
+            range: '50-100'
+            }, {
+            estimate: '不能用小刀刮或剥皮，标本可以用刀一击就断裂',
+            example: '粘土、煤、混凝土、片岩、页岩、粉砂岩',
+            range: '25-50'
+            }, {
+            estimate: '用小刀很难剥开，用刀尖用力敲击，形成浅压痕',
+            example: '白垩、岩盐、钾盐',
+            range: '5-25'
+            }, {
+            estimate: '在地质锤的尖头猛烈的打击下，碎块可以被剥落',
+            example: '高度风化或变质的岩石',
+            range: '1-5'
+            }, {
+            estimate: '按缩略图缩进',
+            example: '坚硬的断层泥',
+            range: '0.25-1'
+            }],
+            multipleSelection: []
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
         }
         },
     created(){
@@ -170,13 +212,27 @@ export default {
                 }
             });
         })
+<<<<<<< HEAD
+=======
+
+        //页面初始化时生成projectId
+         calculateApi.createProject().then(response => {
+             console.log(response.data.data.projectId)
+             cookie.set('projectId',response.data.data.projectId)
+         })
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
     },
     methods:{
         check(){
             if(this.ucs){
+<<<<<<< HEAD
                 let u = this.ucs * 1000000
                 this.$router.push ({ path:'/method1/rockstructure', 
                 query: { rockId:this.rockId,ucs:u } }) 
+=======
+                this.$router.push ({ path:'/method1/rockstructure', 
+                query: { rockId:this.rockId,ucs:this.ucs } }) 
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             }
         },
         confirm(){
@@ -184,7 +240,11 @@ export default {
         },
         
     handleSelectionChange(val) {
+<<<<<<< HEAD
         this.ucs = val.strength;
+=======
+        this.multipleSelection = val;
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
       },
     //   控制单选
     handleCurrentChange(val) {
@@ -215,4 +275,8 @@ export default {
     height:400px;
     display:inline-block;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a

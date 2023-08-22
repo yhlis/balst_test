@@ -5,7 +5,11 @@ module.exports = {
     axios: {
       proxy: true, // Can be also an object with default options
       prefix: '/api',
+<<<<<<< HEAD
       credentials: true
+=======
+    credentials: true
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
     },
     proxy: {
         '/api': {
@@ -38,7 +42,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
+<<<<<<< HEAD
     transpile: ["three"],
+=======
+    transpile: [
+      "three"
+    ],
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
     vendor: ['axios'],
     /*
     ** Run ESLint on save

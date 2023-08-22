@@ -1,5 +1,6 @@
 <template>
   <div>
+<<<<<<< HEAD
     <div class="card5">
         <h2 class="title-front">11 辅助孔布置</h2>
         <div style="margin-top:50px">
@@ -11,10 +12,24 @@
             </h3>
             <h3 class="font-type3" style="margin-top:20px">孔距系数：
                 <el-input style="width:100px" v-model="ratioSpacing"></el-input>
+=======
+    <div class="card5" style="background-color:pink">
+        <h2 class="title-front">11 辅助孔布置</h2>
+        <div style="margin-top:50px">
+            <h3 class="font-type3" style="display:inline-block">装药直径：
+                <el-input style="width:100px" v-model="diameter"><template slot="suffix">mm</template></el-input>
+            </h3>
+            <h3 class="font-type3" style="display:inline-block">排距系数：
+                <el-input style="width:100px" v-model="pitch"></el-input>
+            </h3>
+            <h3 class="font-type3" style="margin-top:20px">孔距系数：
+                <el-input style="width:100px" v-model="pore"></el-input>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
             </h3>
         </div>
 
         <el-button style="margin:20px 0 0 200px" @click="calculate()" type="primary">计算与绘图</el-button>
+<<<<<<< HEAD
 
         <div>
             <!-- 表格填入开始 -->
@@ -89,16 +104,61 @@
                         <div class="item__txt">{{scope.row.z2}}</div>
                         </div>
                     </el-table-column>
+=======
+<!-- 表格填入开始 -->
+        <div>
+            <el-table
+                :data="auxHoleData"
+                size="max"
+                border
+                style="width: 610px;margin-top:50px"
+                @cell-mouse-enter="handleCellEnter"
+                @cell-mouse-leave="handleCellLeave"
+            >
+                <el-table-column
+                    prop="hole"
+                    label="辅助孔"
+                    width="150">
+                    <div class="item" slot-scope="scope">
+                    <el-input class="item__input" v-model="scope.row.hole"></el-input>
+                    <div class="item__txt">{{scope.row.hole}}</div>
+                    </div>
+                </el-table-column>
+
+                <el-table-column
+                    prop="X"
+                    label="X"
+                    width="200">
+                    <div class="item" slot-scope="scope">
+                    <el-input class="item__input" v-model="scope.row.x" placeholder="请输入x坐标" style="width:150px"></el-input>
+                    <div class="item__txt">{{scope.row.x}}</div>
+                    </div>
+                </el-table-column>
+
+                <el-table-column
+                    prop="Y"
+                    label="Y"
+                    width="200">
+                    <div class="item" slot-scope="scope">
+                    <el-input class="item__input" v-model="scope.row.y" placeholder="请输入y坐标"></el-input>
+                    <div class="item__txt">{{scope.row.y}}</div>
+                    </div>
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
                 </el-table-column>
 
                 <el-table-column
                     label="操作"
+<<<<<<< HEAD
                     width="70">
+=======
+                    width="60">
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
                     <div class="item" slot-scope="scope">
                     <el-button @click="delRow(scope.$index, scope.row)" type="text" size="small">删除</el-button>
                     </div>
                 </el-table-column>
             </el-table>
+<<<<<<< HEAD
             <i class="el-icon-circle-plus-outline" @click="addRow()"></i><br>
             <el-button style="margin:20px 0 0 200px" @click="buildLine()" type="primary">手动调整确认并绘图</el-button>
             </div>
@@ -110,12 +170,28 @@
             </div>
             <!-- 画布展示结束 -->   
         </div>
+=======
+        <div>
+      <i class="el-icon-circle-plus-outline" @click="addRow()"></i>
+    </div>
+
+<el-button style="margin:20px 0 0 200px" @click="buildLine()" type="primary">手动调整确认并绘图</el-button>
+    
+    <!-- 画布展示开始 -->
+    <div style="background-color:red;width:650px;height:500px;margin:-400px 0 0 620px;">
+    </div>
+    <!-- 画布展示结束 -->   
+
+    </div>
+<!-- 表格填入结束 -->   
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 
     </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import '~/assets/css2/pages.css'
 import auxiliaryHolesApi from '@/api/auxiliaryHoles.js'
 import cuttingApi from '@/api/cutting.js'
@@ -215,6 +291,24 @@ export default {
                 })
             })
         },
+=======
+export default {
+    data(){
+        return{
+            diameter:'',
+            pitch:'',
+            pore:'',
+            hole:'',
+            X:'',
+            Y:'',
+            editProp: ['hole','X','Y'],
+            auxHoleData:[],
+            num:0,  //计数
+        }
+    },
+
+    methods:{
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 
     //添加
         addRow(){
@@ -244,7 +338,10 @@ export default {
                 return;
             });
         },
+<<<<<<< HEAD
 
+=======
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
         // 鼠标移入cell
         handleCellEnter (row, column, cell, event) {
         const property = column.property
@@ -267,4 +364,21 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
+=======
+.title-front{
+    margin-top: 50px;
+    font-size: 40px !important;
+}
+.card5{
+  height: auto;
+  width: 100%;
+}
+.font-type3{ 
+  margin-left: 50px;
+  font-size: 30px !important;
+  width: 259px;
+}
+
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
 </style>

@@ -92,7 +92,11 @@ export default {
       this.disable3=true;
     },
     reset(){
+<<<<<<< HEAD
       this.structuralPlaneScore=0;
+=======
+      this.score=0;
+>>>>>>> ddf2e0dd9303f152d2dd29acd4faf39b57eaac7a
       this.disable1=false;
       this.disable2=false;
       this.disable3=false;
