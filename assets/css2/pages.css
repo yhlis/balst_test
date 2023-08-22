@@ -1,0 +1,46 @@
+.title-front{
+    margin-top: 50px;
+    font-size: 40px !important;
+}
+.card5{
+  height: auto;
+  width: 100%;
+}
+.font-type3{ 
+  margin-left: 50px;
+  font-size: 30px !important;
+  width: 259px;
+}
+.font-type4{ 
+  margin-left: 30px;
+  font-size: 20px !important;
+  width: 259px;
+}
+.font-type5{
+  margin-top: 50px;
+  margin-left: 10%;
+  font-size: 25px !important;
+  width: 400px;
+  line-height:30px;
+}
+
+
+/* 表格ui */
+.item .item__input {
+  display: none;
+  width: 80px;
+}
+/* 调整elementUI中样式 如果不需要调整请忽略 */
+.item .item__input .el-input__inner {
+  height: 24px !important;
+}
+/* 调整elementUI中样式 如果不需要调整请忽略 */
+.item .item__input .el-input__suffix i {
+  font-size: 12px !important;
+  line-height: 26px !important;
+}
+.item .item__txt {
+  box-sizing: border-box;
+  line-height: 24px;
+  padding: 0 9px;
+}
